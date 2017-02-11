@@ -1,0 +1,11 @@
+#tictactoe td {
+    font-size: 44pt;
+    border: 1px solid black;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+
+}
+caption {
+    font-size: 60pt;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        #tictactoe td {
+            font-size: 44pt;
+            border: 1px solid black;
+            height: 100px;
+            width: 100px;
+            text-align: center;
+            /*padding: 0 20px;*/
+            background-color: #78bec5;
+        }
+
+        caption {
+            font-family: "Courier New", sans-serif;
+            font-size: 30pt;
+            color: #151d70;
+            background-color: #b6b5ca;
+        }
+        td#message{
+            color: red;
+            font-size: 20pt;
+        }
+    </style>
+    <script>
+        "use strict";
+        var move = "X";
+        function play(xyz) {
+            var m = document.getElementById("message");
+            m.innerHTML = "";
+            if (xyz.innerHTML != "?") {
+                m.innerHTML = "Illegal move, CHEATER!";
+                return;
+            }
+            xyz.innerHTML = move;
+            move = move == "X" ? "O" : "X";
+            isWinner();
+        }
+        function isWinner() {
+            var x = document.querySelectorAll("table#tictactoe tbody td");
+                x.forEach(function(e) {
+                    console.log(e.innerHTML);
+            });
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+<table id="tictactoe">
+    <caption>t1c tAc t0e</caption>
+    <tbody>
+    <tr>
+        <td onclick="play(this)">?</td>
+        <td onclick="play(this)">?</td>
+        <td onclick="play(this)">?</td>
+    </tr>
+    <tr>
+        <td onclick="play(this)">?</td>
+        <td onclick="play(this)">?</td>
+        <td onclick="play(this)">?</td>
+    </tr>
+    <tr>
+        <td onclick="play(this)">?</td>
+        <td onclick="play(this)">?</td>
+        <td onclick="play(this)">?</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td id="message" colspan="3">&nbsp;</td>
+    </tr>
+    </tfoot>
+</table>
+</body>
+</html>
